@@ -60,7 +60,7 @@ export default function Profile() {
           className={`mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white
           border border-gray-300 rounded transition ease-in-out ${changeDetail && "bg-red-200 focus:bg-red-200"}`}/>
           {/* Email Input */}
-          <input type = "email" id="email" value={email} disabled = {!changeDetail} onChange={onChange}
+          <input type = "email" id="email" value={email} disabled 
           className=' mb-6 w-full px-4 py-2 text-xl text-gray-700 bg-white
           border border-gray-300 rounded transition ease-in-out'/>
           <div className='flex justify-between text-sm sm:text-lg
