@@ -88,7 +88,7 @@ export default function CreateListing() {
       geolocation.lng = data.results[0]?.geometry.location.lng ?? 0;
       location = data.status === "ZERO _RESULTS" && undefined;
 
-      if(location === undefined || location.includes("undefined")){
+      if(location === undefined){
         setLoading(false)
         toast.error("Please enter a correct address")
         return;
@@ -147,7 +147,8 @@ export default function CreateListing() {
       ...formData,
       imgUrls,
       geolocation,
-      timestamp:serverTimestamp()
+      timestamp:serverTimestamp(),
+      userRef:auth.currentUser.uid
     }
     delete formDataCopy.images;
     !formDataCopy.offer && delete formDataCopy.discountPrice;
